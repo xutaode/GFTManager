@@ -1,0 +1,130 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+    </div>
+    <div class="main_con">
+
+        <div class="big_title">
+            <div class="tool_bar">
+                <span class="b_btn" onclick="javascript:ecssdone('/merchant/420001.tran');">确认支付</span>
+            </div>
+            <h3>在线充值</h3>
+        </div>
+
+        <div class="col2">
+            <form name="myform" action="#" id="myform" method="post">
+                <input type="hidden" id="SYSCOD" name="SYSCOD" value="2201"> <input type="hidden" id="MerNo" name="MerNo" value="00000000000078"> <input type="hidden" id="THIRDPARTY" name="THIRDPARTY" value="CFCA"> <input type="hidden" id="tranType" name="tranType" value="20102"> <input type="hidden" id="payProducts" name="payProducts" value="B2CWY"><input type="hidden" id="accounttype" name="accounttype" value="00">
+                <table>
+                    <tbody><tr>
+                        <th>账户余额：</th>
+                        <td><i class="f16" id="balance">0.00元</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>充值金额：</th>
+                        <td><input type="text" class="text_input" id="RegAmt" name="RegAmt">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span class="s_attention_icon"></span><u>当天充值金额，只能隔天使用！</u>
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </form>
+        </div>
+        <!--不要删-->
+        <div class="clear"></div>
+        <!--不要删-->
+
+        <div class="tabs_nav">
+            <ul id="menu1">
+                <li><a href="#tabcon_01" onclick="setTab(1,0)" class="current">个人网银支付</a>
+                </li>
+                <li><a href="#tabcon_02" onclick="setTab(1,1)">企业网银支付</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tabs_con">
+            <div class="con" id="tabcon_01" style="display: block; top: 0px; opacity: 1;">
+                <ul class="bank_list">
+                    <li>
+                        <input type="radio" id="bankcode_g1" name="bankcode" value="CMB">
+                        <label for="bankcode_g1"><span class="cmb_bank"></span>招商银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g2" name="bankcode" value="ICBC">
+                        <label for="bankcode_g2"><span class="icbc_bank"></span>工商银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g3" name="bankcode" value="BOC">
+                        <label for="bankcode_g3"><span class="boc_bank"></span>中国银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g4" name="bankcode" value="ABC">
+                        <label for="bankcode_g4"><span class="abc_bank"></span>农业银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g5" name="bankcode" value="CITIC">
+                        <label for="bankcode_g5"><span class="citic_bank"></span>中信银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g6" name="bankcode" value="CCB">
+                        <label for="bankcode_g6"><span class="ccb_bank"></span>建设银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g7" name="bankcode" value="BCM">
+                        <label for="bankcode_g7"><span class="commb_bank"></span>交通银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g8" name="bankcode" value="CMBC">
+                        <label for="bankcode_g8"><span class="cmbc_bank"></span>民生银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g9" name="bankcode" value="SPA">
+                        <label for="bankcode_g9"><span class="pingan_bank"></span>平安银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g10" name="bankcode" value="SPDB">
+                        <label for="bankcode_g10"><span class="spdb_bank"></span>浦发银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_g11" name="bankcode" value="CEB">
+                        <label for="bankcode_g11"><span class="cebc_bank"></span>光大银行</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="con" id="tabcon_02">
+                <ul class="bank_list">
+                    <li><input type="radio" id="bankcode_q1" name="bankcode" value="CMB">
+                        <label for="bankcode_q1"><span class="cmb_bank"></span>招商银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q2" name="bankcode" value="ICBC">
+                        <label for="bankcode_q2"><span class="icbc_bank"></span>工商银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q3" name="bankcode" value="BOC">
+                        <label for="bankcode_q3"><span class="boc_bank"></span>中国银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q4" name="bankcode" value="ABC">
+                        <label for="bankcode_q4"><span class="abc_bank"></span>农业银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q5" name="bankcode" value="CITIC">
+                        <label for="bankcode_q5"><span class="citic_bank"></span>中信银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q6" name="bankcode" value="CCB">
+                        <label for="bankcode_q6"><span class="ccb_bank"></span>建设银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q7" name="bankcode" value="BCM">
+                        <label for="bankcode_q7"><span class="commb_bank"></span>交通银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q8" name="bankcode" value="CMBC">
+                        <label for="bankcode_q8"><span class="cmbc_bank"></span>民生银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q9" name="bankcode" value="SPA">
+                        <label for="bankcode_q9"><span class="pingan_bank"></span>平安银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q10" name="bankcode" value="SPDB">
+                        <label for="bankcode_q10"><span class="spdb_bank"></span>浦发银行</label>
+                    </li>
+                    <li><input type="radio" id="bankcode_q11" name="bankcode" value="CEB">
+                        <label for="bankcode_q11"><span class="cebc_bank"></span>光大银行</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />

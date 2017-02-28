@@ -1,0 +1,51 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+    </div>
+    <div class="main_con">
+
+        <div class="big_title">
+            <!--
+            <div class="tool_bar"><span class="b_btn">导出账单</span></div>
+            <h3>结算申请</h3>
+             -->
+        </div>
+
+        <div class="inquiry_box">
+
+            <span name="dl" id="blur" class="inquiry_btn">提交申请</span>
+            <dl>
+                <dd>选择结算订单产生时间：</dd>
+                <dt>开始时间：</dt><dd><input name="fromDate" id="fromDate" disabled="disabled" class="text_input" type="text"></dd>
+                <dt>结束时间：</dt><dd><input name="endDate" id="endDate" onclick="WdatePicker({isShowClear:true,readOnly:true})" class="text_input Wdate" type="text"></dd>
+            </dl>
+
+            <!-- 判断商户的登陆状态，暂时写死为0表示登陆成功状态 -->
+            <input type="hidden" id="MERSTATUS" name="MERSTATUS" value="0">
+            <!-- 暂时写死为00000000000078商户 -->
+            <input type="hidden" id="ACCOUNT" name="ACCOUNT" value="00000000000381">
+            <input type="hidden" id="SYSCOD" name="SYSCOD" value="0002">
+            <input type="hidden" id="merNo" value="00001247">
+            <input id="cust_id" name="cust_id" type="hidden" size="10" value="00000000000381">
+            <input id="pay_ac_no" name="pay_ac_no" type="hidden" size="10" value="0000000000038101">
+            <input id="STL_STATUS" name="STL_STATUS" type="hidden" size="10" value="0">
+            <input id="STL_TIME" name="STL_TIME" type="hidden" size="10" value="23:59:59">
+            <input id="pageNo" name="pageNo" type="hidden" size="10" value="1">
+
+        </div>
+
+        <div class="alert_box">
+            <h4>温馨提示</h4>
+            <span class="attention_icon"></span>
+            <p>
+                1、超过当天<i>15:00</i> 提交的申请，平台会在下一个工作日进行处理。<br>
+                2、如果如果长时间未到账，请联系客服：0755-83190999。<br>
+                3、在双休日和法定节假日期间，商户可以申请结算，顺延在下一个工作日处理。如需紧急结算请联系客服。<br>
+            </p>
+        </div>
+
+    </div>
+</div>
+</div>
+<include file="Public/footer" />

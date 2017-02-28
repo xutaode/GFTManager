@@ -1,0 +1,41 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+    </div>
+    <div class="main_con">
+
+        <div class="big_title">
+            <input type="hidden" name="MERNAME" id="MERNAME" value="海南奇楠沉香交易中心有限公司"> <input type="hidden" name="MERID" id="MERID" value="00000000000381"> <input type="hidden" name="INSUM2" id="INSUM2" value="0"> <input type="hidden" name="OUTSUM2" id="OUTSUM2" value="0"> <input type="hidden" name="CURBALANCE" id="CURBALANCE" value="0"> <input type="hidden" name="PAYSUM" id="PAYSUM" value="0"> <input type="hidden" name="JSSUM" id="JSSUM" value="0"> <input type="hidden" name="CZSUM" id="CZSUM" value="0"> <input type="hidden" name="DFSUM" id="DFSUM" value="0"> <input type="hidden" name="DSSUM" id="DSSUM" value="0"> <input type="hidden" name="OUTFEESUM" id="OUTFEESUM" value="0"> <input type="hidden" name="ZHSUM" id="ZHSUM" value="0"> <input type="hidden" name="OUTZHSUM" id="OUTZHSUM" value="0"> <input type="hidden" name="D_STARTDATE" id="D_STARTDATE" value="2017-02-27"> <input type="hidden" name="D_ENDDATE" id="D_ENDDATE" value="2017-02-28">
+
+            <div class="tool_bar">
+                <span class="b_btn" onclick="download()">导出账单</span>
+            </div>
+            <h3>汇总账单</h3>
+        </div>
+
+        <div class="inquiry_box">
+            <span class="inquiry_btn" onclick="showBill()">查询</span>
+            <dl>
+                <dt>开始时间：</dt>
+                <dd>
+                    <input type="text" name="STARTDATE" id="STARTDATE" onclick="WdatePicker({isShowClear:true,readOnly:true})" class="text_input Wdate" value="">
+                </dd>
+                <dt>结束时间：</dt>
+                <dd>
+                    <input type="text" name="ENDDATE" id="ENDDATE" onclick="WdatePicker({isShowClear:true,readOnly:true})" class="text_input Wdate" value="">
+                </dd>
+                <dd>注：汇总时间相差最多只能31天</dd>
+            </dl>
+        </div>
+
+        <div class="bill_form">
+            <span id="content_bill"><h2>深圳华融电子支付科技有限公司 汇总账单</h2><div class="col2"><p>商户名称：海南奇楠沉香交易中心有限公司</p><p>开始日期：2017-02-27 00:00:00</p></div><div class="col2"><p>商户编号：00000000000381</p><p>结束日期：2017-02-28 23:59:59</p></div><table><tbody><tr><td colspan="2"><label>当期收入：0</label><label>当期支出：0</label><label>当期余额：<i class="f16">0</i></label></td></tr><tr><td colspan="2"></td></tr><tr><td width="50%"><h4>收入金额：</h4><p>支付：0</p><p>充值：0</p><p>代收：0</p><p>其他收入：0</p><p>合计收入：<i>0</i></p></td><td width="50%"><h4>支出金额：</h4><p>结算：0</p><p>代付：0</p><p>服务费：0</p><p>其他支出：0</p><p>合计支出：<i>0</i></p></td></tr></tbody></table></span>
+            <p>
+                以上数据中，支付、充值、代收、结算、代付已扣除服务费，<br> 以上数据仅供参考，如有异议，以商户账户中的流水数据为准。
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />

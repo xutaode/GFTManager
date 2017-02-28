@@ -1,0 +1,104 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+    </div>
+    <div class="main_con">
+
+        <div class="big_title">
+            <div class="tool_bar"><span class="b_btn" onclick="exportrecords()">导出账单</span></div>
+            <h3>结算记录</h3>
+        </div>
+
+        <div class="inquiry_box">
+            <span class="inquiry_btn" onclick="getCotent()">查询</span>
+            <dl>
+                <dt>开始时间：</dt><dd><input type="text" id="fromDate" name="fromDate" onclick="WdatePicker({isShowClear:true,readOnly:true})" class="Wdate text_input" value=""></dd>
+                <dt>结束时间：</dt><dd><input type="text" name="toDate" id="toDate" onclick="WdatePicker({isShowClear:true,readOnly:true})" class="Wdate text_input" value=""></dd>
+                <dt>结算状态：</dt>
+                <dd>
+                    <select name="STL_STATUS" id="STL_STATUS">
+                        <option value="-1" selected="">不限</option>
+                        <option value="0">结算审核中</option>
+                        <option value="1">结算处理中</option>
+                        <option value="2">审核未通过</option>
+                        <option value="3">结算成功</option>
+                        <option value="4">结算失败</option>
+                    </select>
+                </dd>
+            </dl>
+        </div>
+        <!--不要删--><div class="clear"></div><!--不要删-->
+
+        <div class="tabs_nav mini_tabs">
+            <ul>
+                <li><a href="#tabcon_01" class="list current" id="jies_menu1" onclick="jies_change(1)">所有记录</a></li>
+                <li><a href="#tabcon_02" class="list" id="jies_menu2" onclick="jies_change(2)">结算审核中</a></li>
+                <li><a href="#tabcon_03" class="list" id="jies_menu3" onclick="jies_change(3)">结算处理中</a></li>
+                <li><a href="#tabcon_04" class="list" id="jies_menu4" onclick="jies_change(4)">结算成功</a></li>
+                <li><a href="#tabcon_05" class="list" id="jies_menu5" onclick="jies_change(5)">结算失败</a></li>
+                <li><a href="#tabcon_06" class="list" id="jies_menu6" onclick="jies_change(6)">审核未通过</a></li>
+            </ul>
+        </div>
+
+
+        <div class="tabs_con">
+            <div class="con" id="tabcon_01" style="display: block; top: 0px; opacity: 1;">
+                <div class="col1">
+                    <span id="Con1"><table><tbody><tr><th width="12%">流水号</th><th width="13%">订单总金额</th><th width="10%">结算手续费</th><th width="10%">交易手续费</th><th width="13%">结算金额</th><th width="8%">处理状态</th><th width="12%">申请时间</th><th width="22%">操作</th></tr><tr><td>201702170419</td><td>375,685.51</td><td>1,502.20</td><td>0.00</td><td><i>374,183.31</i></td><td><b>审核中</b></td><td>2017-02-17 09:55</td><td><span class="edit_btn" onclick="location=&quot;balance_details.jsp?_index=3&amp;showId=210402&amp;flag=1&amp;MERNO=00000000000381&amp;STL_APPL_DATE=2017-02-17 09:55:40&amp;STL_TO_DATE=2017-02-16 23:59:59&amp;STL_TOTALORDAMT=375,685.51&amp;STL_FEE=0.00&amp;STL_TXNCOMAMT=1,502.20&amp;STL_APPLYSTLAMT=374,183.31&amp;STL_STATUS=0&amp;MERNO=00000000000381&amp;SYSCOD=2201&amp;merNo=00001247&amp;payAcNo=1234567890123611&amp;fromDate=&amp;toDate=&amp;pageNo=1&amp;Status=-1&amp;fag=1&amp;pageNo=1&amp;STL_ID=201702170419&quot;">详情</span><span class="edit_btn" onclick="agree(&quot;201702170419&quot;,&quot;00000000000381&quot;,&quot;0000000000038101&quot;,20170131,20170216)">同意</span><span class="edit_btn" onclick="refuse(&quot;201702170419&quot;)">拒绝</span></td></tr><tr><td>201702070418</td><td>395,066.48</td><td>1,580.01</td><td>0.00</td><td><i>393,486.47</i></td><td><em>结算成功</em></td><td>2017-02-07 09:27</td><td><span class="edit_btn" onclick="location=&quot;balance_details.jsp?_index=3&amp;showId=210402&amp;flag=1&amp;MERNO=00000000000381&amp;STL_APPL_DATE=2017-02-07 09:27:30&amp;STL_TO_DATE=2017-01-31 23:59:59&amp;STL_TOTALORDAMT=395,066.48&amp;STL_FEE=0.00&amp;STL_TXNCOMAMT=1,580.01&amp;STL_APPLYSTLAMT=393,486.47&amp;STL_STATUS=3&amp;MERNO=00000000000381&amp;SYSCOD=2201&amp;merNo=00001247&amp;payAcNo=1234567890123611&amp;fromDate=&amp;toDate=&amp;pageNo=1&amp;Status=-1&amp;fag=1&amp;pageNo=1&amp;STL_ID=201702070418&quot;">详情</span></td></tr><tr><td>201702070417</td><td>484,374.49</td><td>1,937.15</td><td>0.00</td><td><i>482,437.34</i></td><td><u>审核未通过</u></td><td>2017-02-07 09:25</td><td><span class="edit_btn" onclick="location=&quot;balance_details.jsp?_index=3&amp;showId=210402&amp;flag=1&amp;MERNO=00000000000381&amp;STL_APPL_DATE=2017-02-07 09:25:07&amp;STL_TO_DATE=2017-02-06 23:59:59&amp;STL_TOTALORDAMT=484,374.49&amp;STL_FEE=0.00&amp;STL_TXNCOMAMT=1,937.15&amp;STL_APPLYSTLAMT=482,437.34&amp;STL_STATUS=2&amp;MERNO=00000000000381&amp;SYSCOD=2201&amp;merNo=00001247&amp;payAcNo=1234567890123611&amp;fromDate=&amp;toDate=&amp;pageNo=1&amp;Status=-1&amp;fag=1&amp;pageNo=1&amp;STL_ID=201702070417&quot;">详情</span></td></tr><tr><td>201701160413</td><td>296,656.00</td><td>1,186.58</td><td>0.00</td><td><i>295,469.42</i></td><td><em>结算成功</em></td><td>2017-01-16 10:09</td><td><span class="edit_btn" onclick="location=&quot;balance_details.jsp?_index=3&amp;showId=210402&amp;flag=1&amp;MERNO=00000000000381&amp;STL_APPL_DATE=2017-01-16 10:09:36&amp;STL_TO_DATE=2017-01-13 23:59:59&amp;STL_TOTALORDAMT=296,656.00&amp;STL_FEE=0.00&amp;STL_TXNCOMAMT=1,186.58&amp;STL_APPLYSTLAMT=295,469.42&amp;STL_STATUS=3&amp;MERNO=00000000000381&amp;SYSCOD=2201&amp;merNo=00001247&amp;payAcNo=1234567890123611&amp;fromDate=&amp;toDate=&amp;pageNo=1&amp;Status=-1&amp;fag=1&amp;pageNo=1&amp;STL_ID=201701160413&quot;">详情</span></td></tr><tr><td>201701120412</td><td>23,769.40</td><td>95.04</td><td>0.00</td><td><i>23,674.36</i></td><td><em>结算成功</em></td><td>2017-01-12 11:15</td><td><span class="edit_btn" onclick="location=&quot;balance_details.jsp?_index=3&amp;showId=210402&amp;flag=1&amp;MERNO=00000000000381&amp;STL_APPL_DATE=2017-01-12 11:15:55&amp;STL_TO_DATE=2016-12-16 23:59:59&amp;STL_TOTALORDAMT=23,769.40&amp;STL_FEE=0.00&amp;STL_TXNCOMAMT=95.04&amp;STL_APPLYSTLAMT=23,674.36&amp;STL_STATUS=3&amp;MERNO=00000000000381&amp;SYSCOD=2201&amp;merNo=00001247&amp;payAcNo=1234567890123611&amp;fromDate=&amp;toDate=&amp;pageNo=1&amp;Status=-1&amp;fag=1&amp;pageNo=1&amp;STL_ID=201701120412&quot;">详情</span></td></tr><tr><td>201701120411</td><td>100.00</td><td>0.40</td><td>0.00</td><td><i>99.60</i></td><td><u>审核未通过</u></td><td>2017-01-12 11:15</td><td><span class="edit_btn" onclick="location=&quot;balance_details.jsp?_index=3&amp;showId=210402&amp;flag=1&amp;MERNO=00000000000381&amp;STL_APPL_DATE=2017-01-12 11:15:18&amp;STL_TO_DATE=2016-12-09 23:59:59&amp;STL_TOTALORDAMT=100.00&amp;STL_FEE=0.00&amp;STL_TXNCOMAMT=0.40&amp;STL_APPLYSTLAMT=99.60&amp;STL_STATUS=2&amp;MERNO=00000000000381&amp;SYSCOD=2201&amp;merNo=00001247&amp;payAcNo=1234567890123611&amp;fromDate=&amp;toDate=&amp;pageNo=1&amp;Status=-1&amp;fag=1&amp;pageNo=1&amp;STL_ID=201701120411&quot;">详情</span></td></tr></tbody></table></span>
+                </div>
+            </div>
+
+
+            <div class="con" id="tabcon_02">
+                <div class="col1">
+                    <span id="Con2"></span>
+                </div>
+            </div>
+
+
+            <div class="con" id="tabcon_03">
+                <div class="col1">
+                    <span id="Con3"></span>
+                </div>
+            </div>
+
+
+            <div class="con" id="tabcon_04">
+                <div class="col1">
+                    <span id="Con4"></span>
+                </div>
+            </div>
+
+
+            <div class="con" id="tabcon_05">
+                <div class="col1">
+                    <span id="Con5"></span>
+                </div>
+            </div>
+
+            <div class="con" id="tabcon_06">
+                <div class="col1">
+                    <span id="Con6"></span>
+                </div>
+            </div>
+            <div class="page_bar" id="ten">
+
+                <div class="page_info">
+                    <label>交易笔数：<b id="paysum">6</b>笔</label><label>结算总金额：<i class="f16" id="stl_applysum">1569350.5</i></label>
+                </div>
+                <span>共<b id="pages">1</b>页</span>
+                <span>共<b id="total">6</b>条记录</span>
+                <a href="javascript:showPage(0);" id="sy" class="page_home" title="首页">home</a>
+                <a href="javascript:showPage(1);" id="ay" class="page_prev_btn" title="上一页">prev</a>
+                <!-- <a href="#.html" class="active">1</a>  -->
+                <div id="selectpage" style="display:inline"><a href="javascript:tenPage(1);" class="active">1</a></div>
+                <a href="javascript:showPage(2);" id="xy" class="page_next_btn" title="下一页">prev</a>
+                <a href="javascript:showPage(3);" id="wy" class="page_end" title="尾页">home</a>
+                <span>跳转到</span><input type="text" id="turnpage"><span class="page_jump_btn" onclick="gopage();">GO</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />

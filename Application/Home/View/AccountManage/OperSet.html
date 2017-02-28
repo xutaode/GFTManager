@@ -1,0 +1,34 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">账户信息</a></div>
+    </div>
+    <div class="container-fluid">
+        <div class="tabs_con">
+            <div class="main_con">
+                <div class="big_title">
+                    <div class="tool_bar"><span class="b_btn" onclick="add_user()">新增操作员</span></div>
+                    <h3>操作员设置</h3>
+                </div>
+                <div class="col1">
+                    <input type="hidden" id="MERSTATUS" name="MERSTATUS" value="0">
+                    <div id="data"><table cellspacing="0"><thead><tr><th>姓名</th><th>操作员ID</th><th>账户状态</th><th>创建时间</th><th>操作</th></tr></thead><tbody><tr><td>黄滔</td><td>operator05</td><td><em>可用</em></td><td>2017-01-03</td><td><span class="edit_btn" onclick="update(&quot;operator05&quot;,&quot;00000000000381&quot;);">修改</span><span class="disclick_btn">关闭</span>删除</td></tr><tr><td>王文娟</td><td>operator03</td><td><em>可用</em></td><td>2016-12-27</td><td><span class="edit_btn" onclick="update(&quot;operator03&quot;,&quot;00000000000381&quot;);">修改</span><span class="switch_btn" onclick="upuser(&quot;operator03&quot;,&quot;00000000000381&quot;,0);">关闭</span><span class="del_btn" onclick="del(&quot;operator03&quot;,&quot;00000000000381&quot;);">删除</span></td></tr><tr><td>朱春娜</td><td>operator02</td><td><em>可用</em></td><td>2016-12-27</td><td>修改<span class="disclick_btn">关闭</span>删除</td></tr><tr><td>黎凯羽</td><td>operator01</td><td><em>可用</em></td><td>2016-12-27</td><td>修改<span class="disclick_btn">关闭</span>删除</td></tr><tr><td>海南奇楠沉香交易中心有限公司</td><td>admin</td><td><em>可用</em></td><td>2016-11-15</td><td>修改<span class="disclick_btn">关闭</span>删除</td></tr></tbody></table></div>
+                </div>
+
+                <div class="page_bar" id="ten">
+                    <div class="page_info"></div>
+                    <span>共<b id="totalPage">1</b>页</span>
+                    <span>共<b id="total">5</b>条记录</span>
+                    <a href="javascript:showPage(0);" id="sy" class="page_home" title="首页">home</a>
+                    <a href="javascript:showPage(1);" id="ay" class="page_prev_btn" title="上一页">prev</a>
+                    <!-- <a href="#.html" class="active">1</a>  -->
+                    <div id="selectpage" style="display:inline"><a href="javascript:tenPage(1);" class="active">1</a></div>
+                    <a href="javascript:showPage(2);" id="xy" class="page_next_btn" title="下一页">prev</a>
+                    <a href="javascript:showPage(3);" id="wy" class="page_end" title="尾页">home</a>
+                    <span>跳转到</span><input type="text" id="turnpage"><span class="page_jump_btn" onclick="gopage();">GO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public/footer" />

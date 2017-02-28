@@ -1,0 +1,203 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>账户查询</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../../../WSproject/HXS/GFT_Manager/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../../../WSproject/HXS/GFT_Manager/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="../../../../../WSproject/HXS/GFT_Manager/css/matrix-style.css" />
+    <link rel="stylesheet" href="../../../../../WSproject/HXS/GFT_Manager/css/matrix-media.css" />
+    <link rel="stylesheet" href="../../../../../WSproject/HXS/GFT_Manager/css/public.css" />
+    <link rel="stylesheet" href="../../../../../WSproject/HXS/GFT_Manager/css/account_mgr.css" />
+    <link href="../../../../../WSproject/HXS/GFT_Manager/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+    <h1><a href="../../../../../WSproject/HXS/GFT_Manager/dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part-->
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav">
+        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+                <li class="divider"></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/login.html"><i class="icon-key"></i> 退出</a></li>
+            </ul>
+        </li>
+        <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
+                <li class="divider"></li>
+                <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> inbox</a></li>
+                <li class="divider"></li>
+                <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> outbox</a></li>
+                <li class="divider"></li>
+                <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
+            </ul>
+        </li>
+        <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+        <li class=""><a title="" href="../../../../../WSproject/HXS/GFT_Manager/login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+    </ul>
+</div>
+
+<!--start-top-serch-->
+<div id="search">
+    <input type="text" placeholder="Search here..."/>
+    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+</div>
+<!--close-top-serch-->
+
+<!--sidebar-menu-->
+
+<div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-signal"></i> Charts &amp; graphs</a>
+    <ul>
+        <li><a href="../../../../../WSproject/HXS/GFT_Manager/index.html"><i class="icon icon-home"></i> <span>欢迎登陆</span></a> </li>
+        <li class="active"> <a href="../../../../../WSproject/HXS/GFT_Manager/Acount_Manage.html"><i class="icon icon-signal"></i> <span>账户管理</span></a> </li>
+        <li> <a href="../../../../../WSproject/HXS/GFT_Manager/widgets.html"><i class="icon icon-inbox"></i> <span>我的服务</span></a> </li>
+        <li><a href="../../../../../WSproject/HXS/GFT_Manager/tables.html"><i class="icon icon-th"></i> <span>交易管理</span></a></li>
+        <li><a href="../../../../../WSproject/HXS/GFT_Manager/grid.html"><i class="icon icon-fullscreen"></i> <span>结算管理</span></a></li>
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>代收代付</span> <span class="label label-important">3</span></a>
+            <ul>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/form-common.html">Basic Form</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/form-validation.html">Form with Validation</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/form-wizard.html">Form with Wizard</a></li>
+            </ul>
+        </li>
+        <li><a href="../../../../../WSproject/HXS/GFT_Manager/buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
+        <li><a href="../../../../../WSproject/HXS/GFT_Manager/interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
+        <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label label-important">5</span></a>
+            <ul>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/index2.html">Dashboard2</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/gallery.html">Gallery</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/calendar.html">Calendar</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/invoice.html">Invoice</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/chat.html">Chat option</a></li>
+            </ul>
+        </li>
+        <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
+            <ul>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/error403.html">Error 403</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/error404.html">Error 404</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/error405.html">Error 405</a></li>
+                <li><a href="../../../../../WSproject/HXS/GFT_Manager/error500.html">Error 500</a></li>
+            </ul>
+        </li>
+        <li class="content"> <span>Monthly Bandwidth Transfer</span>
+            <div class="progress progress-mini progress-danger active progress-striped">
+                <div style="width: 77%;" class="bar"></div>
+            </div>
+            <span class="percent">77%</span>
+            <div class="stat">21419.94 / 14000 MB</div>
+        </li>
+        <li class="content"> <span>Disk Space Usage</span>
+            <div class="progress progress-mini active progress-striped">
+                <div style="width: 87%;" class="bar"></div>
+            </div>
+            <span class="percent">87%</span>
+            <div class="stat">604.44 / 4000 MB</div>
+        </li>
+    </ul>
+</div>
+<style>
+    #content_All {
+        background: none repeat scroll 0 0 #fff;
+        margin-left: 220px;
+        margin-right: 0;
+        padding-bottom: 25px;
+        position: relative;
+        min-height: 100%;
+        width: auto;
+    }
+</style>
+<div id="content_All">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">账户信息</a></div>
+    </div>
+    <div class="container-fluid">
+        <div class="tabs_con">
+            <div class="main_con">
+
+                <div class="big_title">
+                    <div class="tool_bar">
+                        <span class="b_btn" onclick="download()">导出报表</span>
+                    </div>
+                    <h3>账户交易信息</h3>
+                </div>
+                <!-- 商户账户信息内容 -->
+                <span id="content_account"><span id="content"></span><div class="col2"><table><tbody><tr><th>开户时间：</th><td>2016-11-15</td></tr><tr><th>商户ID：</th><td>0000000000038101</td></tr></tbody></table></div><div class="col2"><table><tbody><tr><th>可用余额：</th><td><i class="f16">0.00 元</i></td></tr><tr><th>冻结余额：</th><td><b>0.00</b></td></tr></tbody></table></div></span>
+
+                <!--不要删-->
+                <div class="clear"></div>
+                <!--不要删-->
+
+                <div class="inquiry_box">
+                    <span class="inquiry_btn" onclick="chaxun()">查询</span>
+                    <dl>
+                        <dt>开始时间：</dt>
+                        <dd>
+                            <input type="text" name="fromDate" id="fromDate" onclick="WdatePicker({isShowClear:true,readOnly:true})" class="text_input Wdate" value="">
+                        </dd>
+                        <dt>结束时间：</dt>
+                        <dd>
+                            <input type="text" name="toDate" id="toDate" onclick="WdatePicker({isShowClear:true,readOnly:false})" class="text_input Wdate" value="">
+                        </dd>
+                        <dt>交易名称：</dt>
+                        <dd>
+                            <select name="prdOrdType" id="prdOrdType">
+                                <option value="">全部</option>
+                                <option value="001">支付</option>
+                                <option value="002">充值</option>
+                                <option value="003">提现</option>
+                                <option value="004">转账</option>
+                                <option value="005">结算</option>
+                                <option value="006">退款</option>
+                                <option value="007">对账</option>
+                                <option value="008">综合记账</option>
+                                <option value="009">错账挂账</option>
+                                <option value="010">代付</option>
+                                <option value="012">代收</option>
+                                <option value="013">鉴权</option>
+                                <option value="999">其他</option>
+                            </select>
+                        </dd>
+                        <dt>交易编号：</dt>
+                        <dd>
+                            <input class="text_input" type="text" name="TranNo" id="TranNo" value="">
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- 商户交易详细内容 -->
+                <div class="col1">
+                    <span id="content_tran"><table><tbody><tr><th width="15%">流水号</th><th width="15%">交易编号</th><th width="15%">交易时间</th><th width="18%">交易名称</th><th width="12%">金额(元)</th><th width="8%">收支</th><th width="17%">备注</th></tr><tr><td>20170223170210</td><td>3418</td><td>2017-02-23</td><td>综合记账</td><td><b>142,211.51</b></td><td><b>--</b></td><td></td></tr><tr><td>20170222234929</td><td>17022200444822</td><td>2017-02-22</td><td>支付</td><td><i>49.80</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222234846</td><td>17022200444819</td><td>2017-02-22</td><td>支付</td><td><i>199.20</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222234657</td><td>17022200444818</td><td>2017-02-22</td><td>支付</td><td><i>99.60</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222234322</td><td>17022200444816</td><td>2017-02-22</td><td>支付</td><td><i>49.80</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222232459</td><td>17022200444813</td><td>2017-02-22</td><td>支付</td><td><i>99.60</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222231530</td><td>17022200444807</td><td>2017-02-22</td><td>支付</td><td><i>498.00</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222225056</td><td>17022200444796</td><td>2017-02-22</td><td>支付</td><td><i>39.84</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222224155</td><td>17022200444792</td><td>2017-02-22</td><td>支付</td><td><i>99.60</i></td><td><i>收入</i></td><td></td></tr><tr><td>20170222224134</td><td>17022200444791</td><td>2017-02-22</td><td>支付</td><td><i>498.00</i></td><td><i>收入</i></td><td></td></tr></tbody></table></span>
+                </div>
+
+                <div class="page_bar" id="ten">
+                    <div class="page_info"></div>
+                    <span>共<b id="pages_count">181</b>页</span> <span>共<b id="total">1803</b>条记录</span>
+                    <a href="javascript:showPage(0);" id="sy" class="page_home" title="首页">home</a> <a href="javascript:showPage(1);" id="ay" class="page_prev_btn" title="上一页">prev</a>
+                    <div id="selectpage" style="display:inline"><a href="javascript:tenPage(1);" class="active">1</a><a href="javascript:tenPage(2);">2</a><a href="javascript:tenPage(3);">3</a><a href="javascript:tenPage(4);">4</a><a href="javascript:tenPage(5);">5</a><a style="display:none" href="javascript:tenPage(6);">6</a><a style="display:none" href="javascript:tenPage(7);">7</a><a style="display:none" href="javascript:tenPage(8);">8</a><a style="display:none" href="javascript:tenPage(9);">9</a><a style="display:none" href="javascript:tenPage(10);">10</a><a style="display:none" href="javascript:tenPage(11);">11</a><a style="display:none" href="javascript:tenPage(12);">12</a><a style="display:none" href="javascript:tenPage(13);">13</a><a style="display:none" href="javascript:tenPage(14);">14</a><a style="display:none" href="javascript:tenPage(15);">15</a><a style="display:none" href="javascript:tenPage(16);">16</a><a style="display:none" href="javascript:tenPage(17);">17</a><a style="display:none" href="javascript:tenPage(18);">18</a><a style="display:none" href="javascript:tenPage(19);">19</a><a style="display:none" href="javascript:tenPage(20);">20</a><a style="display:none" href="javascript:tenPage(21);">21</a><a style="display:none" href="javascript:tenPage(22);">22</a><a style="display:none" href="javascript:tenPage(23);">23</a><a style="display:none" href="javascript:tenPage(24);">24</a><a style="display:none" href="javascript:tenPage(25);">25</a><a style="display:none" href="javascript:tenPage(26);">26</a><a style="display:none" href="javascript:tenPage(27);">27</a><a style="display:none" href="javascript:tenPage(28);">28</a><a style="display:none" href="javascript:tenPage(29);">29</a><a style="display:none" href="javascript:tenPage(30);">30</a><a style="display:none" href="javascript:tenPage(31);">31</a><a style="display:none" href="javascript:tenPage(32);">32</a><a style="display:none" href="javascript:tenPage(33);">33</a><a style="display:none" href="javascript:tenPage(34);">34</a><a style="display:none" href="javascript:tenPage(35);">35</a><a style="display:none" href="javascript:tenPage(36);">36</a><a style="display:none" href="javascript:tenPage(37);">37</a><a style="display:none" href="javascript:tenPage(38);">38</a><a style="display:none" href="javascript:tenPage(39);">39</a><a style="display:none" href="javascript:tenPage(40);">40</a><a style="display:none" href="javascript:tenPage(41);">41</a><a style="display:none" href="javascript:tenPage(42);">42</a><a style="display:none" href="javascript:tenPage(43);">43</a><a style="display:none" href="javascript:tenPage(44);">44</a><a style="display:none" href="javascript:tenPage(45);">45</a><a style="display:none" href="javascript:tenPage(46);">46</a><a style="display:none" href="javascript:tenPage(47);">47</a><a style="display:none" href="javascript:tenPage(48);">48</a><a style="display:none" href="javascript:tenPage(49);">49</a><a style="display:none" href="javascript:tenPage(50);">50</a><a style="display:none" href="javascript:tenPage(51);">51</a><a style="display:none" href="javascript:tenPage(52);">52</a><a style="display:none" href="javascript:tenPage(53);">53</a><a style="display:none" href="javascript:tenPage(54);">54</a><a style="display:none" href="javascript:tenPage(55);">55</a><a style="display:none" href="javascript:tenPage(56);">56</a><a style="display:none" href="javascript:tenPage(57);">57</a><a style="display:none" href="javascript:tenPage(58);">58</a><a style="display:none" href="javascript:tenPage(59);">59</a><a style="display:none" href="javascript:tenPage(60);">60</a><a style="display:none" href="javascript:tenPage(61);">61</a><a style="display:none" href="javascript:tenPage(62);">62</a><a style="display:none" href="javascript:tenPage(63);">63</a><a style="display:none" href="javascript:tenPage(64);">64</a><a style="display:none" href="javascript:tenPage(65);">65</a><a style="display:none" href="javascript:tenPage(66);">66</a><a style="display:none" href="javascript:tenPage(67);">67</a><a style="display:none" href="javascript:tenPage(68);">68</a><a style="display:none" href="javascript:tenPage(69);">69</a><a style="display:none" href="javascript:tenPage(70);">70</a><a style="display:none" href="javascript:tenPage(71);">71</a><a style="display:none" href="javascript:tenPage(72);">72</a><a style="display:none" href="javascript:tenPage(73);">73</a><a style="display:none" href="javascript:tenPage(74);">74</a><a style="display:none" href="javascript:tenPage(75);">75</a><a style="display:none" href="javascript:tenPage(76);">76</a><a style="display:none" href="javascript:tenPage(77);">77</a><a style="display:none" href="javascript:tenPage(78);">78</a><a style="display:none" href="javascript:tenPage(79);">79</a><a style="display:none" href="javascript:tenPage(80);">80</a><a style="display:none" href="javascript:tenPage(81);">81</a><a style="display:none" href="javascript:tenPage(82);">82</a><a style="display:none" href="javascript:tenPage(83);">83</a><a style="display:none" href="javascript:tenPage(84);">84</a><a style="display:none" href="javascript:tenPage(85);">85</a><a style="display:none" href="javascript:tenPage(86);">86</a><a style="display:none" href="javascript:tenPage(87);">87</a><a style="display:none" href="javascript:tenPage(88);">88</a><a style="display:none" href="javascript:tenPage(89);">89</a><a style="display:none" href="javascript:tenPage(90);">90</a><a style="display:none" href="javascript:tenPage(91);">91</a><a style="display:none" href="javascript:tenPage(92);">92</a><a style="display:none" href="javascript:tenPage(93);">93</a><a style="display:none" href="javascript:tenPage(94);">94</a><a style="display:none" href="javascript:tenPage(95);">95</a><a style="display:none" href="javascript:tenPage(96);">96</a><a style="display:none" href="javascript:tenPage(97);">97</a><a style="display:none" href="javascript:tenPage(98);">98</a><a style="display:none" href="javascript:tenPage(99);">99</a><a style="display:none" href="javascript:tenPage(100);">100</a><a style="display:none" href="javascript:tenPage(101);">101</a><a style="display:none" href="javascript:tenPage(102);">102</a><a style="display:none" href="javascript:tenPage(103);">103</a><a style="display:none" href="javascript:tenPage(104);">104</a><a style="display:none" href="javascript:tenPage(105);">105</a><a style="display:none" href="javascript:tenPage(106);">106</a><a style="display:none" href="javascript:tenPage(107);">107</a><a style="display:none" href="javascript:tenPage(108);">108</a><a style="display:none" href="javascript:tenPage(109);">109</a><a style="display:none" href="javascript:tenPage(110);">110</a><a style="display:none" href="javascript:tenPage(111);">111</a><a style="display:none" href="javascript:tenPage(112);">112</a><a style="display:none" href="javascript:tenPage(113);">113</a><a style="display:none" href="javascript:tenPage(114);">114</a><a style="display:none" href="javascript:tenPage(115);">115</a><a style="display:none" href="javascript:tenPage(116);">116</a><a style="display:none" href="javascript:tenPage(117);">117</a><a style="display:none" href="javascript:tenPage(118);">118</a><a style="display:none" href="javascript:tenPage(119);">119</a><a style="display:none" href="javascript:tenPage(120);">120</a><a style="display:none" href="javascript:tenPage(121);">121</a><a style="display:none" href="javascript:tenPage(122);">122</a><a style="display:none" href="javascript:tenPage(123);">123</a><a style="display:none" href="javascript:tenPage(124);">124</a><a style="display:none" href="javascript:tenPage(125);">125</a><a style="display:none" href="javascript:tenPage(126);">126</a><a style="display:none" href="javascript:tenPage(127);">127</a><a style="display:none" href="javascript:tenPage(128);">128</a><a style="display:none" href="javascript:tenPage(129);">129</a><a style="display:none" href="javascript:tenPage(130);">130</a><a style="display:none" href="javascript:tenPage(131);">131</a><a style="display:none" href="javascript:tenPage(132);">132</a><a style="display:none" href="javascript:tenPage(133);">133</a><a style="display:none" href="javascript:tenPage(134);">134</a><a style="display:none" href="javascript:tenPage(135);">135</a><a style="display:none" href="javascript:tenPage(136);">136</a><a style="display:none" href="javascript:tenPage(137);">137</a><a style="display:none" href="javascript:tenPage(138);">138</a><a style="display:none" href="javascript:tenPage(139);">139</a><a style="display:none" href="javascript:tenPage(140);">140</a><a style="display:none" href="javascript:tenPage(141);">141</a><a style="display:none" href="javascript:tenPage(142);">142</a><a style="display:none" href="javascript:tenPage(143);">143</a><a style="display:none" href="javascript:tenPage(144);">144</a><a style="display:none" href="javascript:tenPage(145);">145</a><a style="display:none" href="javascript:tenPage(146);">146</a><a style="display:none" href="javascript:tenPage(147);">147</a><a style="display:none" href="javascript:tenPage(148);">148</a><a style="display:none" href="javascript:tenPage(149);">149</a><a style="display:none" href="javascript:tenPage(150);">150</a><a style="display:none" href="javascript:tenPage(151);">151</a><a style="display:none" href="javascript:tenPage(152);">152</a><a style="display:none" href="javascript:tenPage(153);">153</a><a style="display:none" href="javascript:tenPage(154);">154</a><a style="display:none" href="javascript:tenPage(155);">155</a><a style="display:none" href="javascript:tenPage(156);">156</a><a style="display:none" href="javascript:tenPage(157);">157</a><a style="display:none" href="javascript:tenPage(158);">158</a><a style="display:none" href="javascript:tenPage(159);">159</a><a style="display:none" href="javascript:tenPage(160);">160</a><a style="display:none" href="javascript:tenPage(161);">161</a><a style="display:none" href="javascript:tenPage(162);">162</a><a style="display:none" href="javascript:tenPage(163);">163</a><a style="display:none" href="javascript:tenPage(164);">164</a><a style="display:none" href="javascript:tenPage(165);">165</a><a style="display:none" href="javascript:tenPage(166);">166</a><a style="display:none" href="javascript:tenPage(167);">167</a><a style="display:none" href="javascript:tenPage(168);">168</a><a style="display:none" href="javascript:tenPage(169);">169</a><a style="display:none" href="javascript:tenPage(170);">170</a><a style="display:none" href="javascript:tenPage(171);">171</a><a style="display:none" href="javascript:tenPage(172);">172</a><a style="display:none" href="javascript:tenPage(173);">173</a><a style="display:none" href="javascript:tenPage(174);">174</a><a style="display:none" href="javascript:tenPage(175);">175</a><a style="display:none" href="javascript:tenPage(176);">176</a><a style="display:none" href="javascript:tenPage(177);">177</a><a style="display:none" href="javascript:tenPage(178);">178</a><a style="display:none" href="javascript:tenPage(179);">179</a><a style="display:none" href="javascript:tenPage(180);">180</a><a style="display:none" href="javascript:tenPage(181);">181</a></div>
+                    <a href="javascript:showPage(2);" id="xy" class="page_next_btn" title="下一页">prev</a> <a href="javascript:showPage(3);" id="wy" class="page_end" title="尾页">home</a> <span>跳转到</span><input type="text" id="turnpage"><span class="page_jump_btn" onclick="gopage();">GO</span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--Footer-part-->
+<div class="row-fluid">
+    <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a> </div>
+</div>
+</body>
+</html>

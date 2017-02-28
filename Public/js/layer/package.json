@@ -1,0 +1,43 @@
+{
+  "name": "layer",
+  "version": "0.1.0",
+  "private": false,
+  "description": "transparently proxies functions, objects",
+  "author": {
+    "name": "lovebear"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "proxy",
+    "transparent",
+    "proxies"
+  ],
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "uglify-js": "*",
+    "should": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lovebear/layer.git"
+  },
+  "readme": "[![Build Status](https://travis-ci.org/lovebear/layer.png)](https://travis-ci.org/lovebear/layer)\n\n# layer\n\nUnobtrusive transparent proxies with very little setup. Doesn't require re-writing existing code. You can just drop it right in!\n\nRuns anywhere there's javascript (browser & node).\n\n--> (layer) --> (function/object)\n\n\n```js\n// add a simple proxy without modifying any existing code!\nvar addBig = function(x, y, next) { \n  x = x * 100;\n  y = y * 100;\n  next(x, y);\n}\n\nvar that = this;\nlayer.set(that, add, addBig);\n\n// existing code...\nfunction add(x, y) {\n  return x + y;\n}\n\nadd(2, 2); // 400\n```\nAnd that's it, all instances of calling `add()` in your existing code now go through `addBig()` then `add()`\n\nYou don't re-write your code! Or have to call `addBig()` directly.\n\n(Note: this won't work in node.js because `add` is private, see [here](#some-advice-on-knowing-the-context).)\n\nFor some fun stuff you can do with layer, check out [intercept.js](https://github.com/lovebear/intercept.js).\n\n## Usage / API\n\n### Setting a proxy\n\n`layer.set(context, function to proxy, proxy function)`\n\nContext being scope or this, read more about it [here](#some-advice-on-knowing-the-context).\n\nIn the browser when you set 'null' as the context, it'll default to global (browser only).\n\n### Unsetting a proxy\n\n`layer.unset(func)` or following the example: `layer.unset(add)`\n\n### Skipping your proxy\nFor those times when you want turn skip a layer...\n\n`func.skip()` or following out add example `add.skip(2, 2)`\n\n### Replacing not proxying (monkey patching)\n\n`layer.replace(context, function to replace, new function)`\n\n### Stopping a proxy early\n\nAt anytime you may stop early by not calling `next`.\n\nAnd either call your callback (async) or return (sync);\n\n## Install\n\n- node:\n`npm install layer`\n\n- browser:\nuse `layer.min.js`\n\n\n## Some advice on knowing the context. \n\n(You can't proxy private variables!)\n\nBecause they're private. Not a big deal, and it's obvious enough. But keep in mind that in a node.js, the root of the module all your var's are effectively private (so the readme example above will not work).\n\nWork around would be `exports.add` and the context being 'exports' would work.\nOr if add was in an object `var obj = { add: ... }`, context being 'obj'.\n\n(Basically, it works like normal except for private variables.)\n\nSome more examples:\n\n```js\nvar somelib = require('somelib'); \nlayer.set(somelib, somelib.func, proxyFn)\n```\n\n```js\nfunction Cat() {}\nCat.prototype.meow = function() {...}\n\nlayer.set(Cat.prototype, Cat.prototype.meow, proxyFn)\n```\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/lovebear/layer/issues"
+  },
+  "homepage": "https://github.com/lovebear/layer",
+  "_id": "layer@0.1.0",
+  "dist": {
+    "shasum": "08fbfab4fd213da409a939e89d98103ba258bef0"
+  },
+  "_from": "layer@",
+  "_resolved": "http://registry.npmjs.org/layer/-/layer-0.1.0.tgz"
+}

@@ -1,0 +1,169 @@
+<include file="Public/menu" />
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+      <div class="container-fluid">
+          <div class="tabs_nav">
+              <ul>
+                  <li><a href="#tabcon_01" class="current">企业基本信息</a></li>
+                  <li><a href="#tabcon_02">结算账户信息</a></li>
+                  <li><a href="#tabcon_03">合同信息</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="tabs_con">
+      <div class="con" id="tabcon_01" style="display: block; top: 0px; opacity: 1;">
+        <div class="col2">
+          <table class="firmTab"><tbody>
+            <assign name="num" value="0" />
+            <foreach name="info_list" item="v">
+              <if condition="$v['code'] eq 582">
+                <?php if($num == 4){break;} $num++;?>
+                <tr>
+                  <th><if condition="$v['state'] eq 1"><span class="require">*</span></if>{$v['name']}：</th>
+                  <td>{$v['value']}</td>
+                </tr>
+              </if>
+            </foreach>
+            </tbody></table>
+          <!--<table class="firmTab">
+            <tbody><tr>
+              <th><span class="require">*</span>商户ID：</th>
+              <td>00000000000381</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>商户名称：</th>
+              <td>海南奇楠沉香交易中心有限公司</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>公司地址：</th>
+              <td>2338459298@qq.com</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>网址：</th>
+              <td>http://</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>邮编：</th>
+              <td>518000</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>电话：</th>
+              <td>13510972598</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>传真：</th>
+              <td>13510972598</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>邮箱：</th>
+              <td>2338459298@qq.com</td>
+            </tr>
+            <tr>
+              <th><span class="require">&nbsp;</span>预留信息：</th>
+              <td name="firmNotReq"><span id="PAY_CHANNEL"></span></td>
+            </tr>
+            </tbody></table>-->
+        </div>
+        <div class="col2">
+          <table class="firmTab">
+            <tbody><tr>
+              <th>业务联系人：</th>
+              <td name="firmNotReq"><span id="BIZ_CONTACT">肖刚</span></td>
+            </tr>
+            <tr>
+              <th>业务联系电话：</th>
+              <td name="firmNotReq"><span id="BIZ_TEL_NO">13510972598</span></td>
+            </tr>
+            <tr>
+              <th>业务邮箱：</th>
+              <td name="firmNotReq"><span id="BIZ_EMAIL">2338459298@qq.com</span></td>
+            </tr>
+            <tr>
+              <th>技术联系人：</th>
+              <td name="firmNotReq"><span id="TECH_CONTACT"></span></td>
+            </tr>
+            <tr>
+              <th>技术联系人电话：</th>
+              <td name="firmNotReq"><span id="TECH_TEL_NO"></span></td>
+            </tr>
+            <tr>
+              <th>技术邮箱：</th>
+              <td name="firmNotReq"><span id="TECH_EMAIL"></span></td>
+            </tr>
+            <tr>
+              <th>客服联系人：</th>
+              <td name="firmNotReq"><span id="SERV_CONTACT">肖刚</span></td>
+            </tr>
+            <tr>
+              <th>客服联系人电话：</th>
+              <td name="firmNotReq"><span id="SERV_TEL_NO">13510972598</span></td>
+            </tr>
+            <tr>
+              <th>客服邮箱：</th>
+              <td name="firmNotReq"><span id="SERV_EMAIL">2338459298@qq.com</span></td>
+            </tr>
+            </tbody></table>
+        </div>
+
+        <!--不要删--><div class="clear"></div><!--不要删-->
+
+        <div class="page_bar">
+          <span id="firmEditBtn" class="b_btn" onclick="updateFirm('/merchant/562219.tran')">修改</span>
+        </div>
+      </div>
+      <div class="con" id="tabcon_02">
+        <div class="col2">
+          <table>
+            <tbody><tr>
+              <th><span class="require">*</span>开户银行：</th>
+              <td>澄迈老城开发区支行</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>开户名称：</th>
+              <td>海南奇楠沉香交易中心有限公司</td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>银行账号：</th>
+              <td>21498001040002021</td>
+            </tr>
+            </tbody></table>
+        </div>
+      </div>
+      <div class="con" id="tabcon_03">
+        <div class="col2">
+          <table>
+            <tbody><tr>
+              <th><span class="require">*</span>合同开始日期：</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>合同截止时间：</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>合同状态：</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>业务合作类型：</th>
+              <td> </td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>结算周期：</th>
+              <td> 按天结算 </td>
+            </tr>
+            <tr>
+              <th><span class="require">*</span>保证金</th>
+              <td></td>
+            </tr>
+            </tbody></table>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<include file="Public/footer" />

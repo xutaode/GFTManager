@@ -1,0 +1,59 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">账户信息</a></div>
+    </div>
+    <div class="container-fluid">
+        <div class="tabs_con">
+                <div class="main_con">
+                    <div class="big_title">
+                        <div class="tool_bar"><span class="b_btn" onclick="ecssdone1('/merchant/568201.dow')">确认修改</span></div>
+                        <h3>修改密码</h3>
+                    </div>
+
+                    <div class="col2">
+                        <input type="hidden" id="ACCOUNT" name="ACCOUNT" value="00000000000381">
+                        <input type="hidden" id="USER_ID" name="USER_ID" value="operator05">
+                        <table>
+                            <tbody><tr>
+                                <th><span class="require">&nbsp;</span>操作员账户：</th>
+                                <td>海南奇楠沉香交易中心有限公司</td>
+                            </tr>
+                            <tr>
+                                <th><span class="require">*</span>当前登录密码：</th>
+                                <td>
+                                    <input type="hidden" name="old_pwd" id="old_pwd" class="text_input">
+                                    <script type="text/javascript">pgeditor.generate();</script><embed id="_ocx_password" maxlength="16" input_2="[\s\S]*" input_3="[\s\S]{6,16}" edittype="0" type="application/x-pass-guard" tabindex="2" class="ocx_style" input_1013="FormSubmit()" input_1009="document.getElementById('_ocx_password01').focus()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="require">*</span>新登录密码：</th>
+                                <td>
+                                    <input type="hidden" name="new_pwd" maxlength="16" id="new_pwd" class="text_input">
+                                    <script type="text/javascript">pgeditor01.generate()</script><embed id="_ocx_password01" maxlength="16" input_2="[\s\S]*" input_3="[\s\S]{6,16}" edittype="0" type="application/x-pass-guard" tabindex="2" class="ocx_style" input_1013="FormSubmit()" input_1009="document.getElementById('_ocx_password02').focus()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="require">*</span>确认密码：</th>
+                                <td>
+                                    <input type="hidden" name="confirm_pwd" id="confirm_pwd" maxlength="16" class="text_input">
+                                    <script type="text/javascript">pgeditor02.generate()</script><embed id="_ocx_password02" maxlength="16" input_2="[\s\S]*" input_3="[\s\S]{6,16}" edittype="0" type="application/x-pass-guard" tabindex="2" class="ocx_style" input_1013="FormSubmit()" input_1009="document.getElementById('auth_code').focus()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="require">*</span>验证码：</th>
+                                <td style="text-align: left;">
+                                    <div class="pas_style">
+                                        <input type="text" class="text_input" name="auth_code" id="auth_code" style="width:100px;" onpaste="return false">
+                                        <img id="randImage" src="/merchant/js/imageshowImges.jsp" align="absmiddle" style="margin:5px 5px 0 0;" onclick="loadimage()">
+                                        <!-- <a href="javascript:loadimage();">看不清，换一张。</a> -->
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<include file="Public/footer" />

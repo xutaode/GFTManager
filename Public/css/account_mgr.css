@@ -1,0 +1,130 @@
+ /*accountInfo*/
+ .powerTd{padding-top: -10px;}
+ .powerUl{padding:0px 20px;}
+ .powerUl li{list-style: disc;
+             margin: 5px 0px;
+            }
+ /*accountInfo end*/
+
+ /*merchantIndex*/
+.pas_style{ width:190px; 
+            height:30px; 
+            line-height:30px; 
+            border:1px solid #B8B8B8; 
+            border-right:1px solid #DCDCDC; 
+            border-bottom:1px solid #DCDCDC; 
+            background-color:#FFF;
+            }
+@-moz-document url-prefix(){
+.pas_style{width:189px;}
+}
+/*merchantIndex end*/
+ 
+ 
+/*operatorAdd*/
+ .nou_user_body_x{list-style-type:none; 
+                 margin:20px; 
+                 overflow:hidden;
+                }
+.nou_user_body_x li{float:left; 
+                    width:95px; 
+                    margin-bottom:10px;
+                   }
+.nou_user_body_x li input{ margin-right:5px;}
+
+.sel select:hover{border:1px solid #9aa0a8;}
+.sel{padding:2px 5px;
+	 border:1px solid #d5d8dc;
+	}
+.warnMsg{line-height:15px;
+		 vertical-align: middle;
+		 width: 188px;
+		 height: 24px;
+		 display: none;
+		 margin-left:8px;
+		 font-size:12px;
+		 text-align: left;
+		 padding-top: 3px;
+		 color: #666;
+		 }
+.require{color: red;margin:3px;}
+
+.reset_btn{width:50px;
+         height:22px;
+		 padding:0 5px;
+		 text-align:center;
+		 color:#1b74c8;
+		 cursor:pointer;
+		 font-size:12px;
+		 margin:0 10px 0 0;
+		 line-height:20px;
+		 display:inline-block;
+		 -webkit-border-radius:2px;			
+		 -moz-border-radius:2px;			
+		 border-radius:2px;
+		 border:1px solid #8fc2ee;
+		 float: left;
+		 }
+.reset_btn:hover{color:#0a3268;
+	             border:1px solid #35a3e8;
+			    }
+			   
+/*operatorAdd end*/
+
+/*operatorSet*/
+.cancelBtn{width:180px;
+       height:36px;
+	   font-size:16px;
+	   color:#1871bc;
+	   cursor:pointer;
+	   text-align:center;
+	   line-height:36px;
+	   margin:0 5px;
+	   display:inline-block;
+	   -webkit-border-radius:6px;
+	   -moz-border-radius:6px;
+	   border-radius:6px;
+	   border:1px solid #35a3e8;
+	   }
+.cancelBtn:hover{color:#fff;
+                 background-color:#35a3e8;
+			    }
+.disclick_btn{width:50px;
+	         height:22px;
+			 text-align:center;
+			 color:gray;
+			 cursor:pointer;
+			 font-size:14px;
+			 margin:0 5px 0 0;
+			 line-height:22px;
+			 display:inline-block;
+			 -webkit-border-radius:2px;			
+			 -moz-border-radius:2px;			
+			 border-radius:2px;
+			 border:1px solid gray;
+			 }
+/*operatorSet end*/
+
+/*operatorShowError end*/
+.errorMsg{font-size: 16px;
+          margin: 10px;}
+/*operatorShowError end*/
+
+.ocx_style{
+	width:180px;
+    height:30px;
+    /* color:#000; */
+    font-size:14px;
+    line-height:30px;	
+    padding:0 5px; 
+    border:1px solid #ceccc8;
+    border-image: none;
+    cursor: text;
+}
+
+@-moz-document url-prefix(){
+.ocx_style{width:190px;}
+}
+ .firmTab input[type="text"]{
+	 margin-bottom:0;
+ }

@@ -1,0 +1,150 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+    </div>
+    <div class="main_con">
+        <input type="hidden" id="ACCOUNT" name="ACCOUNT" value="00000000000381">
+        <input type="hidden" id="SYSCOD" name="SYSCOD" value="2201"> <input type="hidden" id="MERSTATUS" name="MERSTATUS" value="0">
+        <input id="pageNo" name="pageNo" type="hidden" size="10" value="1"> <input id="fag" name="fag" type="hidden" size="10" value=""> <input id="payAcNo" name="payAcNo" type="hidden" size="10" value="1234567890123611"> <input id="pageNum" name="pageNum" type="hidden" size="10" value="1"> <input id="pageNo1" name="pageNo1" type="hidden" size="10" value="1"> <input id="pageNo2" name="pageNo2" type="hidden" size="10" value="1"> <input id="pageNo3" name="pageNo3" type="hidden" size="10" value="1"> <input id="pageNo4" name="pageNo4" type="hidden" size="10" value="1"> <input id="pageNo5" name="pageNo5" type="hidden" size="10" value="1"> <input id="pageNo6" name="pageNo6" type="hidden" size="10" value="1"> <input id="pageNo7" name="pageNo7" type="hidden" size="10" value="1"> <input id="total1" name="total1" type="hidden" size="10" value="1"> <input id="total2" name="total2" type="hidden" size="10" value="1"> <input id="total3" name="total3" type="hidden" size="10" value="1"> <input id="total4" name="total4" type="hidden" size="10" value="1"> <input id="total5" name="total5" type="hidden" size="10" value="1"> <input id="total6" name="total6" type="hidden" size="10" value="1"> <input id="total7" name="total7" type="hidden" size="10" value="1"> <input id="pages1" name="pages1" type="hidden" size="10" value="1"> <input id="pages2" name="pages2" type="hidden" size="10" value="1"> <input id="pages3" name="pages3" type="hidden" size="10" value="1"> <input id="pages4" name="pages4" type="hidden" size="10" value="1"> <input id="pages5" name="pages5" type="hidden" size="10" value="1"> <input id="pages6" name="pages6" type="hidden" size="10" value="1"> <input id="pages7" name="pages7" type="hidden" size="10" value="1">
+
+        <div class="big_title">
+            <div class="tool_bar">
+                <span class="b_btn" onclick="javascript:gotonewpage();">导出报表</span>
+            </div>
+            <h3>交易管理</h3>
+        </div>
+
+        <div class="inquiry_box">
+            <span class="inquiry_btn" onclick="getCotent()">查询</span>
+            <dl>
+                <dt>商户订单号：</dt>
+                <dd>
+                    <input class="text_input" type="text" name="prdOrdNo" id="prdOrdNo" onkeydown="if(event.keyCode==13)event.keyCode=9" value="">
+                </dd>
+                <dt>商品名称：</dt>
+                <dd>
+                    <input class="text_input" type="text" name="prdName" id="prdName" value="">
+                </dd>
+                <dt>交易状态：</dt>
+                <dd>
+                    <select name="OrdStatus" id="OrdStatus">
+                        <option value="-1" selected="">不限</option>
+                        <option value="00">未支付</option>
+                        <option value="01">支付成功</option>
+                        <option value="003">退款</option>
+                        <option value="11">过期</option>
+                        <option value="12">银行卡鉴权查询</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>支付订单号：</dt>
+                <dd>
+                    <input class="text_input" type="text" name="payOrdNo" id="payOrdNo" onkeydown="if(event.keyCode==13)event.keyCode=9" maxlength="50" value="">
+                </dd>
+                <dt>订单时间：</dt>
+                <dd>
+                    <label for="select"></label> <select name="neardate" id="neardate" style="width: 139px" onchange="getReg1(this.value)">
+                    <option value="-1" selected="">任意时间范围</option>
+                    <option value="0">当天</option>
+                    <option value="1">最近一周</option>
+                    <option value="2">最近一个月</option>
+                </select>
+                </dd>
+                <dd>
+                    <span id="riqi" style="display: none;"><input type="text" name="fromDate" id="fromDate" value="" style="width: 104px; padding-left: 10px" onclick="WdatePicker({isShowClear:true})" class="Wdate" onblur="getReg(this.value)"> &nbsp;&nbsp;至&nbsp;&nbsp; <input type="text" name="toDate" id="toDate" value="" style="width: 104px; padding-left: 10px" onclick="WdatePicker({isShowClear:true})" class="Wdate" onblur="getReg(this.value)"></span>
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>交易金额：</dt>
+                <dd>
+                    <label for="textfield2"></label> <input class="amt text_input" type="text" name="minAmt" id="minAmt" value="">
+                    &nbsp;—&nbsp; <input class="amt text_input" type="text" name="maxAmt" id="maxAmt" value=""> 元
+                </dd>
+            </dl>
+        </div>
+
+        <!--不要删-->
+        <div class="clear"></div>
+        <!--不要删-->
+
+        <div class="tabs_nav mini_tabs">
+            <ul>
+                <li><a href="#tabcon_01" id="jies_menu1" onclick="jies_change(1)" class="current">所有记录</a></li>
+                <li><a href="#tabcon_02" id="jies_menu2" onclick="jies_change(2)">未支付</a></li>
+                <li><a href="#tabcon_03" id="jies_menu3" onclick="jies_change(3)">支付成功</a></li>
+                <li><a href="#tabcon_04" id="jies_menu4" onclick="jies_change(4)">退款</a></li>
+                <li><a href="#tabcon_05" id="jies_menu5" onclick="jies_change(5)">过期</a></li>
+                <li><a href="#tabcon_06" id="jies_menu6" onclick="jies_change(6)">银行卡鉴权</a></li>
+            </ul>
+        </div>
+
+        <div class="tabs_con">
+            <!-- 所有记录开始 -->
+            <div class="con" id="tabcon_01" style="display: block; top: 0px; opacity: 1;">
+                <span id="Con1" class="col1"><table><tbody><tr><th width="10%">商品订单号</th><th width="16%">商品名称</th><th width="12%">金 额</th><th width="8%">退款金额</th><th width="8%">交易状态</th><th width="18%">订单时间</th><th width="13%">交易类型</th><th width="15%">操 作</th></tr></tbody></table></span>
+            </div>
+
+            <!-- 所有记录结束 -->
+
+            <!-- 未支付开始 -->
+            <div class="con" id="tabcon_02">
+                <span id="Con2" class="col1"></span>
+            </div>
+            <!-- 未支付结束 -->
+
+            <!-- 支付成功开始 -->
+            <div class="con" id="tabcon_03">
+                <span id="Con3" class="col1"></span>
+            </div>
+            <!-- 支付成功结束 -->
+
+            <!-- 退款开始 -->
+            <div class="con" id="tabcon_04">
+                <span id="Con4" class="col1"></span>
+            </div>
+            <!--
+                <div class="con" id="tabcon_04">
+                    <span id="Con4" class="col1"></span>
+                </div>
+                 -->
+
+            <!-- 退款结束 -->
+
+            <!-- 过期开始 -->
+            <div class="con" id="tabcon_05">
+                <span id="Con5" class="col1"></span>
+            </div>
+            <!-- 过期结束 -->
+
+            <!-- 银行卡鉴权开始 -->
+            <div class="con" id="tabcon_06">
+                <span id="Con6" class="col1"></span>
+            </div>
+            <div class="page_bar" id="ten" style="display: none;">
+                <div class="page_info">
+                    <label>交易笔数：<b id="paysum">0</b>笔</label><label>交易总金额：<i class="f16" id="stl_applysum">0.00元</i></label>
+                </div>
+                <span>共<b id="pages">0</b>页</span>
+                <span>共<b id="total">0</b>条记录</span>
+                <a href="javascript:showPage(0);" id="sy" class="page_home" title="首页">home</a>
+                <a href="javascript:showPage(1);" id="ay" class="page_prev_btn" title="上一页">prev</a>
+                <div id="selectpage" style="display:inline"></div>
+                <a href="javascript:showPage(2);" id="xy" class="page_next_btn" title="下一页">prev</a>
+                <a href="javascript:showPage(3);" id="wy" class="page_end" title="尾页">home</a>
+                <span>跳转到</span><input type="text" id="turnpage"><span class="page_jump_btn" onclick="gopage();">GO</span>
+            </div>
+        </div>
+        <!--
+            <div class="con" id="tabcon_05">
+                <span id="Con5" class="col1"></span>
+                </div>
+            </div>
+             -->
+        <!-- 过期结束 -->
+    </div>
+</div>
+</div>
+<include file="Public/footer" />

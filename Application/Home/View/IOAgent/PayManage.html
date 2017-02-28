@@ -1,0 +1,98 @@
+<include file="Public/menu" />
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">账户管理</a><a href="#" class="current">商户信息</a></div>
+    </div>
+    <div class="main_con">
+        <div class="big_title">
+            <div class="tool_bar">
+                <span class="b_btn" onclick="tranTrip('2')">单笔代付</span> <span class="b_btn" onclick="tranTrip('1')">批量代付</span>
+                <span class="b_btn" onclick="exportmx()">导出明细</span>
+
+            </div>
+            <h3>代付管理</h3>
+        </div>
+        <!--不要删-->
+        <div class="clear"></div>
+        <!--不要删-->
+        <form id="dowform" name="dowform" action="file.download">
+            <input type="hidden" id="fileName" name="fileName" value=""> <input type="hidden" id="subCatalog" name="subCatalog" value="">
+        </form>
+        <div class="inquiry_box">
+            <form name="myform" id="myform" action="420009.tran">
+                <input type="hidden" name="_index" id="_index" value="4"> <input type="hidden" name="showId" id="showId" value="210501"> <input type="hidden" name="PageNum" id="PageNum" value="1">
+                <span class="inquiry_btn" onclick="chaxun()">查询</span>
+                <dl>
+                    <dt>开始时间：</dt>
+                    <dd>
+                        <input type="text" name="STARTDATE" id="STARTDATE" class="text_input Wdate" onclick="WdatePicker({isShowClear:true,readOnly:true})" value="2017-02-25">
+                    </dd>
+                    <dt>结束时间：</dt>
+                    <dd>
+                        <input type="text" name="ENDDATE" id="ENDDATE" class="text_input Wdate" onclick="WdatePicker({isShowClear:true,readOnly:true})" value="">
+                    </dd>
+                    <dt>提交方式：</dt>
+                    <dd>
+                        <select id="SUB_TYPE" name="SUB_TYPE">
+                            <option value="">全部</option>
+                            <option value="0">批量</option>
+                            <option value="1">单笔</option>
+                        </select>
+                    </dd>
+                    <dt>处理状态：</dt>
+                    <dd>
+                        <select id="PAY_STT" name="PAY_STT">
+                            <option value="">全部</option>
+                            <option value="7">待审核</option>
+                            <option value="0">待处理</option>
+                            <option value="1">处理中</option>
+                            <option value="2">处理完毕</option>
+                            <option value="5">已取消</option>
+                            <option value="6">拒绝处理</option>
+                        </select>
+                    </dd>
+                    <dt>代付订单号：</dt>
+                    <dd>
+                        <input type="text" name="ORDER_NO" id="ORDER_NO" class="text_input" value="">
+                    </dd>
+                    <dt>代付方式：</dt>
+                    <dd>
+                        <select id="PAYMENT_TYPE" name="PAYMENT_TYPE">
+                            <option value="">全部</option>
+                            <option value="0">账户代付</option>
+                            <option value="1">银行代付</option>
+                        </select>
+                    </dd>
+                </dl>
+            </form>
+        </div>
+        <div class="col1">
+            <table><tbody>
+                <tr>
+                    <th width="10%">代付订单号</th>
+                    <th width="14%">申请日期</th>
+                    <th width="8%">提交方式</th>
+                    <th width="9%">代付总金额</th>
+                    <th width="8%">手续费</th>
+                    <th width="8%">状态</th>
+                    <th width="15%">总计/成功/失败</th>
+                    <th width="26%">操作</th>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border-bottom: 1px solid #DDD;">无相关信息</td>
+                </tr>
+                </tbody></table>
+        </div>
+        <div class="page_bar">
+            <div class="page_info"></div>
+            <span>共<b>1</b>页</span>
+            <span>共<b>0</b>条记录</span>
+            <a href="javascript:v(1);" class="page_home" title="首页">home</a> <a href="javascript:v(0)" class="page_prev_btn" title="上一页">prev</a>
+            <a href="javascript:v(1)" class="active">1</a>
+            <a href="javascript:gv(2,2)" class="page_next_btn" title="下一页">prev</a> <a href="javascript:v(1)" class="page_end" title="尾页">home</a>
+            <input id="turnpage" type="text"> <span class="page_jump_btn" onclick="gogogo();">GO</span>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />
